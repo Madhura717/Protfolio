@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#080b12" />
+  <meta name="description" content="A no-code editable portfolio builder with live preview." />
+  <title>Portfolio Kit — Editable Portfolio Builder</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-bar">
+      <a class="brand" href="#top" aria-label="Portfolio Kit home">
+        <span class="brand-mark">PK</span>
+        <span><strong>Portfolio Kit</strong><small>your portfolio, in your words</small></span>
+      </a>
+      <div class="app-actions">
+        <span id="save-status" class="save-status" role="status">Ready</span>
+        <button class="button button-ghost" id="export-button" type="button">Export JSON</button>
+        <button class="button button-ghost" id="import-button" type="button">Import JSON</button>
+        <button class="button button-danger" id="reset-button" type="button">Reset</button>
+        <input id="import-file" type="file" accept="application/json,.json" hidden />
+      </div>
+    </header>
+
+    <main class="workspace" id="top">
+      <aside class="editor-panel" aria-labelledby="editor-title">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">No Lovable account needed</p>
+            <h1 id="editor-title">Edit your portfolio</h1>
+            <p class="muted">Fill in the fields below. The preview updates as you type and saves in this browser.</p>
+          </div>
+          <span class="live-dot" title="Live preview is active"></span>
+        </div>
+        <div id="editor" class="editor-form"></div>
+      </aside>
+
+      <section class="preview-panel" aria-labelledby="preview-title">
+        <div class="preview-toolbar">
+          <div>
+            <p class="eyebrow">Live canvas</p>
+            <h2 id="preview-title">Portfolio preview</h2>
+          </div>
+          <a class="preview-link" href="#portfolio-preview">View full page <span aria-hidden="true">↘</span></a>
+        </div>
+        <div id="portfolio-preview" class="portfolio-preview"></div>
+      </section>
+    </main>
+  </div>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
